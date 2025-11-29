@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>BioChimzy Clinic - Quality Healthcare</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">MySite</div>
+            <div class="logo">BioChimzy Clinic</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Our Doctors</a></li>
+                <li><a href="#appointment">Appointment</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -22,50 +23,98 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
-                <p>Welcome to my GitHub Pages site</p>
-                <button id="cta-btn" class="cta-button">Learn More</button>
+                <h1>Welcome to <span class="highlight">BioChimzy Clinic</span></h1>
+                <p>Providing Quality Healthcare Services with Compassion and Excellence</p>
+                <button id="appointment-btn" class="cta-button">Book Appointment</button>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <p>This is where you can write about yourself and your projects.</p>
-        </section>
-
-        <section id="projects" class="projects">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Project 1</h3>
-                    <p>Description of your first project.</p>
+        <section id="services" class="services">
+            <h2>Our Medical Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>General Consultation</h3>
+                    <p>Comprehensive health checkups and medical advice from experienced physicians.</p>
                 </div>
-                <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>Description of your second project.</p>
+                <div class="service-card">
+                    <h3>Emergency Care</h3>
+                    <p>24/7 emergency medical services with immediate attention and care.</p>
                 </div>
-                <div class="project-card">
-                    <h3>Project 3</h3>
-                    <p>Description of your third project.</p>
+                <div class="service-card">
+                    <h3>Laboratory Tests</h3>
+                    <p>Accurate diagnostic tests and blood work with quick results.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Vaccination</h3>
+                    <p>Complete immunization services for all age groups.</p>
                 </div>
             </div>
+        </section>
+
+        <section id="doctors" class="doctors">
+            <h2>Meet Our Doctors</h2>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p>General Physician</p>
+                    <p>15 years of experience in family medicine</p>
+                </div>
+                <div class="doctor-card">
+                    <h3>Dr. Michael Chen</h3>
+                    <p>Cardiologist</p>
+                    <p>Specialist in heart health and cardiovascular care</p>
+                </div>
+                <div class="doctor-card">
+                    <h3>Dr. Emily Rodriguez</h3>
+                    <p>Pediatrician</p>
+                    <p>Expert in child healthcare and development</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="appointment" class="appointment">
+            <h2>Book an Appointment</h2>
+            <form id="appointment-form" class="appointment-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select Service</option>
+                    <option value="consultation">General Consultation</option>
+                    <option value="emergency">Emergency Care</option>
+                    <option value="lab">Laboratory Tests</option>
+                    <option value="vaccination">Vaccination</option>
+                </select>
+                <input type="date" required>
+                <textarea placeholder="Additional Notes" rows="4"></textarea>
+                <button type="submit">Book Appointment</button>
+            </form>
         </section>
 
         <section id="contact" class="contact">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Address</h3>
+                    <p>123 Medical Center Drive<br>Healthcare City, HC 12345</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🕒 Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 8:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Emergency: 24/7</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 My GitHub Page. All rights reserved.</p>
+        <p>&copy; 2024 BioChimzy Clinic. Providing Quality Healthcare.</p>
+        <p>GitHub: <a href="https://github.com/BioChimzy1/clinic-app" target="_blank">BioChimzy1/clinic-app</a></p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-  </html>
+    </html>
