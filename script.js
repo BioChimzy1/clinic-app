@@ -12,24 +12,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// CTA button functionality
-document.getElementById('cta-btn').addEventListener('click', function() {
-    document.getElementById('about').scrollIntoView({
+// Appointment button functionality
+document.getElementById('appointment-btn').addEventListener('click', function() {
+    document.getElementById('appointment').scrollIntoView({
         behavior: 'smooth'
     });
 });
 
 // Form submission handling
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+document.getElementById('appointment-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Get form data
     const formData = new FormData(this);
     const name = this.querySelector('input[type="text"]').value;
     
-    // Simple validation and success message
     if (name) {
-        alert(`Thank you ${name}! Your message has been sent.`);
+        alert(`Thank you ${name}! Your appointment request has been received. We will contact you shortly to confirm.`);
         this.reset();
     }
 });
@@ -38,32 +36,45 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(44, 62, 80, 0.95)';
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        header.style.background = 'rgba(44, 127, 184, 0.95)';
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
     } else {
-        header.style.background = '#2c3e50';
-        header.style.boxShadow = 'none';
+        header.style.background = '#2c7fb8';
+        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
     }
 });
 
-// Simple typing effect for hero section
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function typing() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, speed);
-        }
-    }
-    typing();
-}
-
-// Initialize typing effect when page loads
+// Add current date as minimum for appointment date
 document.addEventListener('DOMContentLoaded', function() {
-    const heroText = document.querySelector('.hero-content h1');
-    const originalText = heroText.innerHTML;
-    typeWriter(heroText, originalText);
+    const dateInput = document.querySelector('input[type="date"]');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    
+    // Add loading animation
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    });
 });
+
+// Simple form validation
+function validateForm(form) {
+    const inputs = form.querySelectorAll('input[required], select[required]');
+    let isValid = true;
+    
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            input.style.borderColor = '#ff6b6b';
+            isValid = false;
+        } else {
+            input.style.borderColor = '#e9ecef';
+        }
+    });
+    
+    return isValid;
+}
