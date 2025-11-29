@@ -7,18 +7,20 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #2c3e50;
+    background: #f8f9fa;
 }
 
 /* Navigation */
 header {
-    background: #2c3e50;
+    background: #2c7fb8;
     color: white;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav {
@@ -33,6 +35,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: white;
 }
 
 .nav-links {
@@ -45,21 +48,23 @@ nav {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 .nav-links a:hover {
-    color: #3498db;
+    color: #f0f8ff;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2c7fb8 0%, #7bb1d3 100%);
     color: white;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 80px;
 }
 
 .hero-content h1 {
@@ -68,23 +73,25 @@ nav {
 }
 
 .highlight {
-    color: #f39c12;
+    color: #ffeb3b;
 }
 
 .cta-button {
-    background: #f39c12;
+    background: #ff6b6b;
     color: white;
     border: none;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border-radius: 5px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    font-weight: bold;
 }
 
 .cta-button:hover {
-    background: #e67e22;
+    background: #ff5252;
+    transform: translateY(-2px);
 }
 
 /* Sections */
@@ -98,58 +105,135 @@ section h2 {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #2c7fb8;
 }
 
-/* Projects */
-.project-grid {
+/* Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    border-top: 4px solid #2c7fb8;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+    color: #2c7fb8;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/* Doctors */
+.doctors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
 }
 
-.project-card {
-    background: #f8f9fa;
+.doctor-card {
+    background: white;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s;
 }
 
-.project-card:hover {
+.doctor-card:hover {
     transform: translateY(-5px);
 }
 
-/* Contact Form */
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
+.doctor-card h3 {
+    color: #2c7fb8;
+    margin-bottom: 0.5rem;
+}
+
+.doctor-card p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Appointment Form */
+.appointment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 800px;
     margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-#contact-form input,
-#contact-form textarea {
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
     font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
-#contact-form button {
-    background: #3498db;
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+    outline: none;
+    border-color: #2c7fb8;
+}
+
+.appointment-form textarea {
+    grid-column: 1 / -1;
+}
+
+.appointment-form button {
+    grid-column: 1 / -1;
+    background: #2c7fb8;
     color: white;
     border: none;
-    padding: 12px;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1.1rem;
+    transition: background 0.3s;
 }
 
-#contact-form button:hover {
-    background: #2980b9;
+.appointment-form button:hover {
+    background: #236fa3;
+}
+
+/* Contact Info */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.contact-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item h3 {
+    color: #2c7fb8;
+    margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -158,6 +242,15 @@ footer {
     color: white;
     text-align: center;
     padding: 2rem;
+}
+
+footer a {
+    color: #7bb1d3;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -173,4 +266,14 @@ footer {
     section {
         padding: 3rem 1rem;
     }
-  }
+    
+    .appointment-form {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .services-grid,
+    .doctors-grid {
+        grid-template-columns: 1fr;
+    }
+}
